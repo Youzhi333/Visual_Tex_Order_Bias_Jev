@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+code/research2visualtexorder/results/
+*.out
+*.log
