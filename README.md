@@ -93,22 +93,29 @@ python -m venv .venv
 source .venv/bin/activate
 
 # install the PyTorch build for your CUDA version first
-pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cu126
+pip install torch==2.14.1 torchvision==0.29.1 \
+  --index-url https://download.pytorch.org/whl/cu126
 
 pip install -r requirements.txt
 ```
+
+The source tree is not installed as a package. From the repository root, add
+the code directories to `PYTHONPATH`:
+
+```bash
+export PYTHONPATH="$PWD/code:$PWD/code/scripts"
+```
+
 
 `requirements.txt` intentionally leaves torch to this step. See
 `anyjev/backends/hf_vlm.py` for the model wrapper.
 
 ## Reproduce one cell
 
-Run from `code/` so `anyjev` and `scripts/` are importable:
+Run from the repository root with the `PYTHONPATH` above:
 
 ```bash
-cd code
-
-python research2visualtexorder/run_order.py \
+python code/research2visualtexorder/run_order.py \
   --dataset aokvqa \
   --models Qwen/Qwen3-VL-4B-Instruct \
   --limit 300 \
@@ -122,7 +129,7 @@ For LLaVA checkpoints the chat template forces the image first, so use the
 `input_ids` splice positions:
 
 ```bash
-python research2visualtexorder/run_order.py \
+python code/research2visualtexorder/run_order.py \
   --dataset aokvqa \
   --models llava-hf/llava-v1.6-mistral-7b-hf \
   --limit 300 \
@@ -144,7 +151,8 @@ mkdir -p results/2026-11-12
 unzip ../../data/results_2026-11-12.zip -d results/2026-11-12
 ```
 
-Then, from the same directory:
+Run the table scripts from `code/research2visualtexorder/` with the repository
+`code` and `code/scripts` on `PYTHONPATH`:
 
 ```bash
 python make_positions_table.py
