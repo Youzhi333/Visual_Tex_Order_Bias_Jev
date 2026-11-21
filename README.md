@@ -196,9 +196,7 @@ reference. Figure PDFs are not required to regenerate the tables.
 The reported runs use one NVIDIA RTX 4090 D (24 GB), Python 3.12.4, PyTorch
 2.14.1+cu126, transformers 5.20.2, CUDA 12.6 and bfloat16. Batch size is 4 for
 the 2B model and 1 for the others; the image cap is 448×448 (200,704 pixels).
-The recorded JSON timings total 1,053 GPU-minutes; end-to-end with model loads
-and exploratory controls is about 20 GPU-hours.
-
+ 
 ## Notes and limitations
 
 - Pointwise covers A-OKVQA and EuroSAT only; it costs \(K\) forwards per item.
