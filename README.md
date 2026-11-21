@@ -225,3 +225,9 @@ Citation information will be added when the paper is available.
   note   = {Manuscript}
 }
 ```
+
+## Acknowledgements
+
+The implementation builds on the AnyJev typed-decision interface and the public
+Qwen, LLaVA, and Idefics model families. Dataset and model credits are listed in
+`THIRD_PARTY.md`.
