@@ -220,9 +220,10 @@ Citation information will be added when the paper is available.
 
 ```bibtex
 @misc{visualjev2026,
-  title  = {Where the Image Sits: Vision--Text Order Bias in Jev},
+  title  = {Where the Image Sits: {V}ision--Text Order Bias in Jev},
   year   = {2026},
-  note   = {Manuscript}
+  author = {Youzhi Zhang}
+  note   = {arXiv Preprint: https://arxiv.org/abs/2611.28535}
 }
 ```
 
